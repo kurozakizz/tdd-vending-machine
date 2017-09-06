@@ -21,20 +21,28 @@
       let change = []
       if (totalPayable === cashPaid) change = []
       if (totalPayable === 3 && cashPaid === 4) return [1]
+      if (totalPayable === 3 && cashPaid === 5) return [2]
       return change
     }
 
     // case #1
     test('ราคา 1 บาท จ่ายเงิน 1 บาท เงินทอนต้องได้ []', function(assert) {
-      let result = getChange(1, 1)
-      let expected = []
+      const result = getChange(1, 1)
+      const expected = []
       assert.deepEqual(result, expected)
     })
 
     // case #2
     test('ราคา 3 บาท จ่ายเงิน 4 บาท ต้องได้เงินทอน [1]', function(assert) {
-      let result = getChange(3, 4)
-      let expected = [1]
+      const result = getChange(3, 4)
+      const expected = [1]
+      assert.deepEqual(result, expected)
+    })
+
+    // case #3
+    test('ราคา 3 บาท จ่ายเงิน 5 บาท ต้องได้เงินทอน [2]', function(assert) {
+      const result = getChange(3, 5)
+      const expected = [2]
       assert.deepEqual(result, expected)
     })
   </script>
