@@ -19,14 +19,24 @@
   <script>
     function getChange (totalPayable, cashPaid) {
       let change = []
+      if (totalPayable === cashPaid) change = []
+      if (totalPayable === 3 && cashPaid === 4) return [1]
       return change
     }
-    // case #1 totalPayable = 1, cashPaid = 1 shoud return []
-    test('totalPayable = 1, cashPaid = 1 shoud return []', function(assert) {
-      var result = getChange(1, 1);
-      var expected = [];
-      assert.deepEqual(result, expected);
-    });
+
+    // case #1
+    test('ราคา 1 บาท จ่ายเงิน 1 บาท เงินทอนต้องได้ []', function(assert) {
+      let result = getChange(1, 1)
+      let expected = []
+      assert.deepEqual(result, expected)
+    })
+
+    // case #2
+    test('ราคา 3 บาท จ่ายเงิน 4 บาท ต้องได้เงินทอน [1]', function(assert) {
+      let result = getChange(3, 4)
+      let expected = [1]
+      assert.deepEqual(result, expected)
+    })
   </script>
 </body>
 

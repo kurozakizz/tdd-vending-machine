@@ -10,5 +10,5 @@ Use Thai coins
 10 Baht
 
 Test Case
-* case #1 totalPayable = 1, cashPaid = 1 shoud return []
-* case #2 totalPayable = 3, cashPaid = 4 should return [1]
+* case #1 ราคา 1 บาท จ่ายเงิน 1 บาท เงินทอนต้องได้ []
+* case #2 ราคา 3 บาท จ่ายเงิน 4 บาท ต้องได้เงินทอน [1]
