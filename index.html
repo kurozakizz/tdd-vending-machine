@@ -22,7 +22,7 @@
       return change
     }
     // case #1 totalPayable = 1, cashPaid = 1 shoud return []
-    test('getChange(1,1) should equal [] - an empty array', function(assert) {
+    test('totalPayable = 1, cashPaid = 1 shoud return []', function(assert) {
       var result = getChange(1, 1);
       var expected = [];
       assert.deepEqual(result, expected);
