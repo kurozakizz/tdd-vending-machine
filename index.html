@@ -61,6 +61,13 @@
       const expected = [2]
       assert.deepEqual(result, expected)
     })
+
+    // case #4
+    test('ราคา 3 บาท จ่ายเงิน 6 บาท ต้องได้เงินทอน [2,1]', function(assert) {
+      const result = getChange(3, 6)
+      const expected = [2, 1]
+      assert.deepEqual(result, expected)
+    })
   </script>
 </body>
 
