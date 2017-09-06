@@ -18,10 +18,26 @@
 
   <script>
     function getChange (totalPayable, cashPaid) {
+      const coins = [10, 5, 2, 1]
       let change = []
-      if (totalPayable === cashPaid) change = []
-      if (totalPayable === 3 && cashPaid === 4) return [1]
-      if (totalPayable === 3 && cashPaid === 5) return [2]
+      if (totalPayable === cashPaid) return []
+      
+      let totalChange = cashPaid - totalPayable
+      while (totalChange > 0) {
+        if (totalChange >= coins[0]) {
+          change.push(coins[0])
+          totalChange -= coins[0]
+        } else if (totalChange >= coins[1]) {
+          change.push(coins[1])
+          totalChange -= coins[1]
+        } else if (totalChange >= coins[2]) {
+          change.push(coins[2])
+          totalChange -= coins[2]
+        } else if (totalChange >= coins[3]) {
+          change.push(coins[3])
+          totalChange -= coins[3]
+        }
+      }
       return change
     }
 
